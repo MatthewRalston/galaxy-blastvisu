@@ -23,7 +23,7 @@ Restart Galaxy
 Result
 ------
 
-![alt text](https://github.com/lecorguille/galaxy-blastvisu/tree/master/blastvisu.png "blastvisu diplay")
+![blastvisu display](blastvisu.png "blastvisu diplay")
 
 
 Blast
