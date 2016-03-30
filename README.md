@@ -20,6 +20,11 @@ cp -r galaxy-blastvisu $GALAXY_ROOT/config/plugins/visualizations/blastvisu
 Restart Galaxy
 
 
+Result
+------
+
+![alt text](https://github.com/lecorguille/galaxy-blastvisu/tree/master/blastvisu.png "blastvisu diplay")
+
 
 Blast
 ------
