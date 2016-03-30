@@ -9,6 +9,18 @@ Blastvisu is a project support by [ABiMS](http://abims.sb-roscoff.fr/)
 It aim to provide the equivalent of NCBI-W3BLAST and [NCBI-BLAST](http://blast.ncbi.nlm.nih.gov/Blast.cgi) on Galaxy.
 
 
+Installation
+------------
+
+``` {.bash}
+git clone https://github.com/lecorguille/galaxy-blastvisu.git
+cp -r galaxy-blastvisu $GALAXY_ROOT/config/plugins/visualizations/blastvisu
+```
+
+Restart Galaxy
+
+
+
 Blast
 ------
 
