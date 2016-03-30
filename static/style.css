@@ -1,0 +1,40 @@
+#headband{height:150px; margin-bottom:0px; background-color:#EEEEEE;border-bottom:1px solid #999999;}
+
+.casemenu {height:22px; margin-left:5px;font-size:0;float:left;margin-top:2px;}
+
+#table{margin-top:10px; margin-bottom:10px; position:relative;}
+
+/* Results table */
+table, td, th{border:none; background-color: #FFFFFF;}	
+th { background-color: #EEEEEE; border-top : 1px solid #999999; border-bottom:1px solid #999999; text-align :center;}
+.ColumCenter {text-align : center;}
+
+/* Link */
+a {text-decoration:none;}
+a:hover {color:#F58031;}
+/*a:focus {background-color: #DFE5F9;}*/
+
+/* Cases Menu */
+.NumSelected {float:left; font-size:12px;margin-left:3px;margin-top:6px;margin-bottom:0px;text-decoration:none;font-weight:normal;}
+.DownloadFormat {height:30px; width:22px;}
+.aButDownOn {href:"";}
+
+.casemenubut {
+	background-color: #F2F2F2; cursor:pointer; display:inline-block; color:#333; width:22px; 
+	text-align:center; border:1px solid #BFBFBF; font-size:16px; border-right:medium none; height:22px;}
+.fa {margin-top:2px;}
+
+/* Buttons */
+.divbutton {margin-left:7px;}
+
+/* Visualization*/
+
+.cadre {border:3px solid #DDDDDD; width:800px; margin-left:auto; margin-right:auto; margin-top:10px; margin-bottom:10px; padding:10px; min-width: 900px; overflow:auto;}
+.leftvisu {width:65%; display:inline-block; float:left;}
+.rightvisu {width:35%; display:inline-block;}
+#linkancre {cursor:pointer; text-decoration:underline; display: inline-block; line-height: 0.1px; overflow:hidden;}
+/*#circoletto {background: url("Pictures/CircoTest.png") no-repeat; width:auto; height:100%;}*/
+
+table.visualization, tr, td {padding:0px; line-height: 0.1px}
+.description {line-height: 1.42857;font-size:16px}
+
