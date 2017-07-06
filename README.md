@@ -14,7 +14,8 @@ Installation
 
 ``` {.bash}
 git clone https://github.com/lecorguille/galaxy-blastvisu.git
-cp -r galaxy-blastvisu $GALAXY_ROOT/config/plugins/visualizations/blastvisu
+cp -r galaxy-blastvisu/plugin $GALAXY_ROOT/config/plugins/visualization/blastvisu
+cp -r galaxy-blastvisu/static/visuBlast $GALAXY_ROOT/static
 ```
 
 Restart Galaxy

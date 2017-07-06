@@ -62,19 +62,21 @@
 			return Seq,hit_id,ID,hit_id
 
 		else :
-			IDs = re.search("\([A-Za-z0-9\.]*\)", Seq).group(0).strip()
-		 	SeqName = Seq.replace(IDs,"",1).lstrip()
-			if len(SeqName)>80 :
-				SeqN = SeqName[:80]
-				SeqN=SeqN+"..."
-			else :
-				SeqN = SeqName.replace(".","")	
-			ID = re.search("[A-Za-z0-9]+",IDs).group(0).strip()	
-			ote = re.search("[a-z]{2}\|[0-9]{2,}\|",hit_id).group(0).strip()
-			h_id = hit_id.replace( ote , ">")
-			hit_cmd = hit_id.replace( ote , " ")
+                    # # This is overly-specific regex code that failed in every scenario i tested. It doesn't seem to do much either...
+		    #     IDs = re.search("\([A-Za-z0-9\.]*\)", Seq).group(0).strip()
+		    #     SeqName = Seq.replace(IDs,"",1).lstrip()
+		    #     if len(SeqName)>80 :
+		    #     	SeqN = SeqName[:80]
+		    #     	SeqN=SeqN+"..."
+		    #     else :
+		    #     	SeqN = SeqName.replace(".","")	
+		    #     ID = re.search("[A-Za-z0-9]+",IDs).group(0).strip()	
+		    #     ote = re.search("[a-z]{2}\|[0-9]{2,}\|",hit_id).group(0).strip()
+		    #     h_id = hit_id.replace( ote , ">")
+		    #     hit_cmd = hit_id.replace( ote , " ")
 		
-			return SeqN,h_id,ID,hit_cmd
+		    #     return SeqN,h_id,ID,hit_cmd
+                    return Seq,Seq,Seq,Seq
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #---calculation spaces for the visualization of the alignment (description)
