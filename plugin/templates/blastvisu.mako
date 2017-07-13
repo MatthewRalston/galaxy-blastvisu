@@ -62,21 +62,22 @@
 			return Seq,hit_id,ID,hit_id
 
 		else :
-                    # # This is overly-specific regex code that failed in every scenario i tested. It doesn't seem to do much either...
-		    #     IDs = re.search("\([A-Za-z0-9\.]*\)", Seq).group(0).strip()
-		    #     SeqName = Seq.replace(IDs,"",1).lstrip()
-		    #     if len(SeqName)>80 :
-		    #     	SeqN = SeqName[:80]
-		    #     	SeqN=SeqN+"..."
-		    #     else :
-		    #     	SeqN = SeqName.replace(".","")	
-		    #     ID = re.search("[A-Za-z0-9]+",IDs).group(0).strip()	
-		    #     ote = re.search("[a-z]{2}\|[0-9]{2,}\|",hit_id).group(0).strip()
-		    #     h_id = hit_id.replace( ote , ">")
-		    #     hit_cmd = hit_id.replace( ote , " ")
-		
-		    #     return SeqN,h_id,ID,hit_cmd
-                    return Seq,Seq,Seq,Seq
+			# #This code contains overly specific regexes that will likely fail... like always
+			# # stupid frenchies
+			# IDs = re.search("\([A-Za-z0-9\.]*\)", Seq).group(0).strip()
+		 	# SeqName = Seq.replace(IDs,"",1).lstrip()
+			# if len(SeqName)>80 :
+			# 	SeqN = SeqName[:80]
+			# 	SeqN=SeqN+"..."
+			# else :
+			# 	SeqN = SeqName.replace(".","")	
+			# ID = re.search("[A-Za-z0-9]+",IDs).group(0).strip()	
+			# ote = re.search("[a-z]{2}\|[0-9]{2,}\|",hit_id).group(0).strip()
+			# h_id = hit_id.replace( ote , ">")
+			# hit_cmd = hit_id.replace( ote , " ")
+			# return SeqN,h_id,ID,hit_cmd
+			return Seq,Seq,Seq,Seq
+
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #---calculation spaces for the visualization of the alignment (description)
@@ -175,6 +176,7 @@
 		TABD += align(start,end,sbj_start,sbj_stop,hsp)
 			
 		return TABD
+
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #---plotting of multiple hsp (visualization)
@@ -291,7 +293,7 @@
 							TABV[Name] += "<img width='%i' height='4' src='/static/visuBlast/Images/%s'/>" % (width,color)
 					TABV[Name] += "</a></td></tr>"					
 #tabD
-					TABD[Name] += "</pre><br/></td></tr>"
+					TABD[Name] += "</pre></td></tr>"
 					break
 
 %>
@@ -309,8 +311,8 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
    	<title>Visualization Output Blast</title>
 		<link type="text/css" rel="Stylesheet" media="screen" href="/static/style/base.css">
-		<link type="text/css" rel="Stylesheet" media="screen" href="/plugins/visualizations/blastvisu/static/style.css">
-		<script type="text/javascript" src="/plugins/visualizations/blastvisu/static/visublast.js"></script>
+		<link type="text/css" rel="Stylesheet" media="screen" href="/static/visuBlast/style.css">
+		<script type="text/javascript" src="/static/visuBlast/visublast.js"></script>
 	</head>
 	<body style = "min-width: 900px;">
 		<div class="toolForm">
@@ -333,7 +335,7 @@
 					<div id="Contener_Query${q}"  length="${L}">
 			 	% else :
 					<div id="Contener_Query${q}"  length="${L}" style="display:none;">
-				%endif
+				% endif
 
 ##~~~~~~~SEQUENCES AREA~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			<form>
@@ -361,6 +363,7 @@
 					  <tr><td/><img width="550" height="4" src="/static/visuBlast/Images/white.gif"/></tr>
 						<tr><td/><img width="550" height="4" src="/static/visuBlast/Images/white.gif"/></tr>
 						${TABV[q]}
+
 					</table>
 				</div>
 
@@ -374,13 +377,13 @@
 					<div id="divbutton_query${q}" class="form-row divbutton">
 						<input type="text" value="160" id="ScoreField_query${q}" size="7">
 						<input type="button" value="Score" onClick="score(this.form.list, document.getElementById('ScoreField_query${q}').value)"> 
-						<br>
+						<br id="test1">
 						<input type="text" value="10" id="BestHits_query${q}" size="7">
 						<input type="button" value="CheckBest" onClick="besthits(this.form.list, document.getElementById('BestHits_query${q}').value)">
-						<br>
+						<br id="test2">
 						<input type="text" value="Things" id="KeyWords_query${q}" size="7">
 						<input type="button" value="FindWord" onClick="keywords(this.form.list,document.getElementById('KeyWords_query${q}').value)"> 
-						<br>	
+						<br id="test3">	
 					</div>
 				</div>	
 
@@ -425,12 +428,13 @@
 							<th><text>Score</text></th>
 							<th><text>Evalues</text></th>
 							<th><text>Accessions</text></th>
-							${TABD[q]}																										
-					</div>																														
-				</form>																																
-			</div>																																	
+
+							${TABD[q]} 
+				</div>
+				</form>
+			</div>
 			% endfor
-		</div> 																																		
+		</div>
 	</body>
 </html>
 
